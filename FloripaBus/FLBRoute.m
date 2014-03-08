@@ -13,13 +13,11 @@
 - (NSInteger) agencyId
 {
     return [self returnNSInteger:attrs[@"agencyId"]];
-
 }
 
 - (NSInteger) routeId
 {
     return [self returnNSInteger:attrs[@"id"]];
-    
 }
 
 - (NSDate *) lastModifiedDate
@@ -35,7 +33,6 @@
 - (NSInteger) shortName
 {
     return [self returnNSInteger:attrs[@"shortName"]];
-    
 }
 
 

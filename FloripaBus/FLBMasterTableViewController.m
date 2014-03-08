@@ -7,6 +7,7 @@
 //
 
 #import "FLBMasterTableViewController.h"
+#import "FLBDetailViewController.h"
 
 @interface FLBMasterTableViewController ()
 {
@@ -145,16 +146,16 @@
 }
 
 
-/*
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    FLBDetailViewController *detailVC = (FLBDetailViewController *)segue.destinationViewController;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    detailVC.route = routes[indexPath.row];
 }
 
- */
+ 
 
 @end

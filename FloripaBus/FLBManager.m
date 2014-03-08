@@ -9,8 +9,10 @@
 #import "FLBManager.h"
 
 #define BASE_URL @"https://dashboard.appglu.com/v1/queries/"
-#define GET_ROUTES @"findRoutesByStopName/run"
 
+#define GET_ROUTES @"findRoutesByStopName/run"
+#define GET_STOPS @"findStopsByRouteId/run"
+#define GET_DEPARTURES @"findDeparturesByRouteId/run"
 
 @implementation FLBManager
 
@@ -42,7 +44,7 @@
 
 #pragma mark Get Routes
 
-- (void)getRoutesWithStopName: (NSString *) stopName
+- (void)getRoutesWithStopName:(NSString *) stopName
             success:(void (^)(NSArray *routes))success
             error:(void (^)(NSString *errorMsg)) error
 {
@@ -81,6 +83,79 @@
     
 }
 
+
+#pragma mark Get Stops
+
+- (void)getStopsForRoute:(FLBRoute *) route
+                      success:(void (^)(NSArray *stops))success
+                        error:(void (^)(NSString *errorMsg)) error
+{
+    
+    [[self AFManagerObject] POST:GET_STOPS
+                      parameters:@{@"params" : @{ @"routeId": [NSString stringWithFormat:@"%d", route.routeId]} }
+                         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                             NSLog(@"JSON: %@", [responseObject description]);
+                             
+                             NSArray *stopsRows = responseObject[@"rows"];
+                             NSMutableArray *stops = [[NSMutableArray alloc] initWithCapacity:stopsRows.count];
+                             
+                             for(NSDictionary *dicStop in stopsRows)
+                             {
+                                 FLBStop *stop = [[FLBStop alloc] initWithAttrs:dicStop];
+                                 [stops addObject:stop];
+                             }
+                             
+                             success(stops);
+                            
+                         }
+                         failure:^(AFHTTPRequestOperation *operation, NSError *err) {
+                             NSLog(@"Error: %@", [error description]);
+                             
+                             NSString *resposta = [[NSString alloc] initWithData:operation.responseData encoding:NSASCIIStringEncoding];
+                             NSLog(@"Resposta do servidor: %@", resposta);
+                             
+                             error(err.description);
+                         }
+     ];
+    
+}
+
+
+#pragma mark Get Departures
+
+- (void)getDeparturesForRoute:(FLBRoute *) route
+                 success:(void (^)(NSArray *stops))success
+                   error:(void (^)(NSString *errorMsg)) error
+{
+    
+    [[self AFManagerObject] POST:GET_DEPARTURES
+                      parameters:@{@"params" : @{ @"routeId": [NSString stringWithFormat:@"%d", route.routeId]} }
+                         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                             NSLog(@"JSON: %@", [responseObject description]);
+                             
+                             NSArray *departsRows = responseObject[@"rows"];
+                             NSMutableArray *departures = [[NSMutableArray alloc] initWithCapacity:departsRows.count];
+                             
+                             for(NSDictionary *depDic in departsRows)
+                             {
+                                 FLBDeparture *departure = [[FLBDeparture alloc] initWithAttrs:depDic];
+                                 [departures addObject:departure];
+                             }
+                             
+                             success(departures);
+                             
+                         }
+                         failure:^(AFHTTPRequestOperation *operation, NSError *err) {
+                             NSLog(@"Error: %@", [error description]);
+                             
+                             NSString *resposta = [[NSString alloc] initWithData:operation.responseData encoding:NSASCIIStringEncoding];
+                             NSLog(@"Resposta do servidor: %@", resposta);
+                             
+                             error(err.description);
+                         }
+     ];
+    
+}
 
 
 @end

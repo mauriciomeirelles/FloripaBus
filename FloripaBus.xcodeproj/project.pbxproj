@@ -21,6 +21,9 @@
 		2262EAAF18CA66DD00E1FB49 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2262EA9118CA66DD00E1FB49 /* UIKit.framework */; };
 		2262EAB718CA66DD00E1FB49 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2262EAB518CA66DD00E1FB49 /* InfoPlist.strings */; };
 		2262EAB918CA66DD00E1FB49 /* FloripaBusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2262EAB818CA66DD00E1FB49 /* FloripaBusTests.m */; };
+		228B541F18CBB1D0003EAB70 /* FLBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228B541E18CBB1D0003EAB70 /* FLBDetailViewController.m */; };
+		228B542218CBC005003EAB70 /* FLBStop.m in Sources */ = {isa = PBXBuildFile; fileRef = 228B542118CBC005003EAB70 /* FLBStop.m */; };
+		228B542518CBC3D5003EAB70 /* FLBDeparture.m in Sources */ = {isa = PBXBuildFile; fileRef = 228B542418CBC3D5003EAB70 /* FLBDeparture.m */; };
 		22C0223A18CB62780031850C /* FLBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0223918CB62780031850C /* FLBManager.m */; };
 		22C0224018CB9BA80031850C /* FLBBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0223F18CB9BA80031850C /* FLBBaseModel.m */; };
 		22C0224318CB9BFA0031850C /* FLBRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0224218CB9BFA0031850C /* FLBRoute.m */; };
@@ -55,6 +58,12 @@
 		2262EAB418CA66DD00E1FB49 /* FloripaBusTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FloripaBusTests-Info.plist"; sourceTree = "<group>"; };
 		2262EAB618CA66DD00E1FB49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2262EAB818CA66DD00E1FB49 /* FloripaBusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FloripaBusTests.m; sourceTree = "<group>"; };
+		228B541D18CBB1D0003EAB70 /* FLBDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLBDetailViewController.h; sourceTree = "<group>"; };
+		228B541E18CBB1D0003EAB70 /* FLBDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLBDetailViewController.m; sourceTree = "<group>"; };
+		228B542018CBC005003EAB70 /* FLBStop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLBStop.h; sourceTree = "<group>"; };
+		228B542118CBC005003EAB70 /* FLBStop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLBStop.m; sourceTree = "<group>"; };
+		228B542318CBC3D5003EAB70 /* FLBDeparture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLBDeparture.h; sourceTree = "<group>"; };
+		228B542418CBC3D5003EAB70 /* FLBDeparture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLBDeparture.m; sourceTree = "<group>"; };
 		22C0223818CB62780031850C /* FLBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLBManager.h; sourceTree = "<group>"; };
 		22C0223918CB62780031850C /* FLBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLBManager.m; sourceTree = "<group>"; };
 		22C0223E18CB9BA80031850C /* FLBBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLBBaseModel.h; sourceTree = "<group>"; };
@@ -176,6 +185,10 @@
 				22C0223F18CB9BA80031850C /* FLBBaseModel.m */,
 				22C0224118CB9BFA0031850C /* FLBRoute.h */,
 				22C0224218CB9BFA0031850C /* FLBRoute.m */,
+				228B542018CBC005003EAB70 /* FLBStop.h */,
+				228B542118CBC005003EAB70 /* FLBStop.m */,
+				228B542318CBC3D5003EAB70 /* FLBDeparture.h */,
+				228B542418CBC3D5003EAB70 /* FLBDeparture.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -193,6 +206,8 @@
 			children = (
 				22C0224418CBA1CA0031850C /* FLBMasterTableViewController.h */,
 				22C0224518CBA1CA0031850C /* FLBMasterTableViewController.m */,
+				228B541D18CBB1D0003EAB70 /* FLBDetailViewController.h */,
+				228B541E18CBB1D0003EAB70 /* FLBDetailViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -335,6 +350,9 @@
 				22C0224618CBA1CA0031850C /* FLBMasterTableViewController.m in Sources */,
 				2262EA9A18CA66DD00E1FB49 /* main.m in Sources */,
 				22C0223A18CB62780031850C /* FLBManager.m in Sources */,
+				228B541F18CBB1D0003EAB70 /* FLBDetailViewController.m in Sources */,
+				228B542218CBC005003EAB70 /* FLBStop.m in Sources */,
+				228B542518CBC3D5003EAB70 /* FLBDeparture.m in Sources */,
 				2262EA9E18CA66DD00E1FB49 /* FLBAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

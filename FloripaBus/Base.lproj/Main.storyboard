@@ -40,7 +40,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJx-8n-vZz">
-                                            <rect key="frame" x="17" y="40" width="266" height="21"/>
+                                            <rect key="frame" x="16" y="40" width="266" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="17"/>
                                             <nil key="highlightedColor"/>
@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="413" y="161"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="NcU-9t-4D1">
             <objects>
-                <viewController id="4F2-x0-E6g" sceneMemberID="viewController">
+                <viewController id="4F2-x0-E6g" customClass="FLBDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kxh-Oh-3Y3"/>
                         <viewControllerLayoutGuide type="bottom" id="na5-Yh-QaH"/>
@@ -98,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uas-S2-Cet" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="813" y="161"/>
+            <point key="canvasLocation" x="886" y="161"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LUo-bX-aoX">
