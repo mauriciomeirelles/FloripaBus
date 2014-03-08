@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "FLBManager.h"
 
-@interface FLBDetailViewController : UIViewController
+@interface FLBDetailViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (strong, nonatomic) FLBRoute *route;
+
+@property (weak, nonatomic) IBOutlet UICollectionView *departureCollectionView;
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end

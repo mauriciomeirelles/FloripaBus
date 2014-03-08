@@ -93,6 +93,13 @@
     //If both requests already back from server update the screen
     if(serverCount > 0)
     {
+        [self.departureCollectionView reloadData];
+        
+        CGFloat newHeight = (45*ceil(weekdayDepartures.count/4));
+                
+        self.departureCollectionView.frame = CGRectMake(self.departureCollectionView.frame.origin.x, self.departureCollectionView.frame.origin.y, self.departureCollectionView.frame.size.width,newHeight );
+        
+        self.scrollView.contentSize = CGSizeMake(320, newHeight + 30);
         
     }
     else
@@ -112,5 +119,30 @@
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];
 }
+
+
+#pragma mark - UICollectionView Methods
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return weekdayDepartures.count;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UICollectionViewCell *cell = [self.departureCollectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    UILabel *lblTime = (UILabel *)[cell viewWithTag:10];
+    
+    FLBDeparture *departure = (FLBDeparture *)weekdayDepartures[indexPath.row];
+    
+    lblTime.text = departure.time;
+    
+    
+    return cell;
+    
+}
+
 
 @end
