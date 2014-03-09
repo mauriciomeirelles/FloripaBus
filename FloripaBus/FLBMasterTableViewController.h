@@ -10,6 +10,7 @@
 #import "FLBManager.h"
 
 @interface FLBMasterTableViewController : UITableViewController <UISearchBarDelegate, UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
