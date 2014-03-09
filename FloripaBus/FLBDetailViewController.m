@@ -42,6 +42,12 @@ typedef enum {
     
     _lblRouteName.text = _route.longName;
     
+    _segmentedDepartureDay.tintColor = _viewDeparturesLine.backgroundColor;
+    
+    //To enable scrolls to top of scrollview
+    _streetsTableView.scrollsToTop = _departureCollectionView.scrollsToTop = NO;
+    
+    
     [self loadData];
 
 }
@@ -108,9 +114,20 @@ typedef enum {
                                              self.streetsTableView.frame.size.width,
                                              newHeight);
     
-    //Change Segmented Control position
+    //Change Departures position
+    _lblDepartures.frame = CGRectMake(_lblDepartures.frame.origin.x,
+                                      self.streetsTableView.frame.origin.y + newHeight + 43,
+                                      _lblDepartures.frame.size.width,
+                                      _lblDepartures.frame.size.height);
+    
+    
+    _viewDeparturesLine.frame = CGRectMake(_viewDeparturesLine.frame.origin.x,
+                                          _lblDepartures.frame.origin.y + 35,
+                                          _viewDeparturesLine.frame.size.width,
+                                          _viewDeparturesLine.frame.size.height);
+    
     _segmentedDepartureDay.frame = CGRectMake(_segmentedDepartureDay.frame.origin.x,
-                                              self.streetsTableView.frame.origin.y + newHeight + 40,
+                                              _viewDeparturesLine.frame.origin.y + 22,
                                               _segmentedDepartureDay.frame.size.width,
                                               _segmentedDepartureDay.frame.size.height);
     
@@ -122,7 +139,7 @@ typedef enum {
                                                     _segmentedDepartureDay.frame.origin.y + _segmentedDepartureDay.frame.size.height + 10,
                                                     self.departureCollectionView.frame.size.width,newHeight );
     
-    self.scrollView.contentSize = CGSizeMake(320, self.departureCollectionView.frame.origin.y + newHeight + 30);
+    self.scrollView.contentSize = CGSizeMake(320, self.departureCollectionView.frame.origin.y + newHeight + 34);
 }
 
 -(void)updateUI

@@ -21,4 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *actvIndicator;
 @property (weak, nonatomic) IBOutlet UITableView *streetsTableView;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblDepartures;
+@property (weak, nonatomic) IBOutlet UIView *viewDeparturesLine;
 @end

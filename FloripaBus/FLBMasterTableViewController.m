@@ -8,6 +8,7 @@
 
 #import "FLBMasterTableViewController.h"
 #import "FLBDetailViewController.h"
+#import "FLBMapViewController.h"
 
 @interface FLBMasterTableViewController ()
 {
@@ -71,6 +72,9 @@
 
 -(void)showErrorAlterWithMessage: (NSString *)message
 {
+    [self.refreshControl endRefreshing];
+
+    
     [[[UIAlertView alloc] initWithTitle:@"Error"
                                message:message
                               delegate:nil
@@ -151,9 +155,22 @@
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    FLBDetailViewController *detailVC = (FLBDetailViewController *)segue.destinationViewController;
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-    detailVC.route = routes[indexPath.row];
+    if([segue.identifier isEqualToString:@"gotoDetail"])
+    {
+        FLBDetailViewController *detailVC = (FLBDetailViewController *)segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        detailVC.route = routes[indexPath.row];
+    }
+    
+    
+}
+
+
+-(IBAction)backFromMapModal:(UIStoryboardSegue *)segue
+{
+    FLBMapViewController *mapVC = (FLBMapViewController *)segue.sourceViewController;
+    _searchBar.text = mapVC.stopName;
+    [self loadDataWithStopName:_searchBar.text];
 }
 
  

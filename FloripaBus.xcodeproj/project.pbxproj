@@ -24,6 +24,8 @@
 		228B541F18CBB1D0003EAB70 /* FLBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228B541E18CBB1D0003EAB70 /* FLBDetailViewController.m */; };
 		228B542218CBC005003EAB70 /* FLBStop.m in Sources */ = {isa = PBXBuildFile; fileRef = 228B542118CBC005003EAB70 /* FLBStop.m */; };
 		228B542518CBC3D5003EAB70 /* FLBDeparture.m in Sources */ = {isa = PBXBuildFile; fileRef = 228B542418CBC3D5003EAB70 /* FLBDeparture.m */; };
+		228B542818CCE227003EAB70 /* FLBMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228B542718CCE227003EAB70 /* FLBMapViewController.m */; };
+		228B542A18CCE310003EAB70 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 228B542918CCE310003EAB70 /* MapKit.framework */; };
 		22C0223A18CB62780031850C /* FLBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0223918CB62780031850C /* FLBManager.m */; };
 		22C0224018CB9BA80031850C /* FLBBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0223F18CB9BA80031850C /* FLBBaseModel.m */; };
 		22C0224318CB9BFA0031850C /* FLBRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0224218CB9BFA0031850C /* FLBRoute.m */; };
@@ -64,6 +66,9 @@
 		228B542118CBC005003EAB70 /* FLBStop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLBStop.m; sourceTree = "<group>"; };
 		228B542318CBC3D5003EAB70 /* FLBDeparture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLBDeparture.h; sourceTree = "<group>"; };
 		228B542418CBC3D5003EAB70 /* FLBDeparture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLBDeparture.m; sourceTree = "<group>"; };
+		228B542618CCE227003EAB70 /* FLBMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLBMapViewController.h; sourceTree = "<group>"; };
+		228B542718CCE227003EAB70 /* FLBMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLBMapViewController.m; sourceTree = "<group>"; };
+		228B542918CCE310003EAB70 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		22C0223818CB62780031850C /* FLBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLBManager.h; sourceTree = "<group>"; };
 		22C0223918CB62780031850C /* FLBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLBManager.m; sourceTree = "<group>"; };
 		22C0223E18CB9BA80031850C /* FLBBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLBBaseModel.h; sourceTree = "<group>"; };
@@ -81,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				228B542A18CCE310003EAB70 /* MapKit.framework in Frameworks */,
 				2262EA9018CA66DD00E1FB49 /* CoreGraphics.framework in Frameworks */,
 				2262EA9218CA66DD00E1FB49 /* UIKit.framework in Frameworks */,
 				2262EA8E18CA66DD00E1FB49 /* Foundation.framework in Frameworks */,
@@ -124,6 +130,7 @@
 		2262EA8C18CA66DD00E1FB49 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				228B542918CCE310003EAB70 /* MapKit.framework */,
 				2262EA8D18CA66DD00E1FB49 /* Foundation.framework */,
 				2262EA8F18CA66DD00E1FB49 /* CoreGraphics.framework */,
 				2262EA9118CA66DD00E1FB49 /* UIKit.framework */,
@@ -208,6 +215,8 @@
 				22C0224518CBA1CA0031850C /* FLBMasterTableViewController.m */,
 				228B541D18CBB1D0003EAB70 /* FLBDetailViewController.h */,
 				228B541E18CBB1D0003EAB70 /* FLBDetailViewController.m */,
+				228B542618CCE227003EAB70 /* FLBMapViewController.h */,
+				228B542718CCE227003EAB70 /* FLBMapViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -347,6 +356,7 @@
 			files = (
 				22C0224018CB9BA80031850C /* FLBBaseModel.m in Sources */,
 				22C0224318CB9BFA0031850C /* FLBRoute.m in Sources */,
+				228B542818CCE227003EAB70 /* FLBMapViewController.m in Sources */,
 				22C0224618CBA1CA0031850C /* FLBMasterTableViewController.m in Sources */,
 				2262EA9A18CA66DD00E1FB49 /* main.m in Sources */,
 				22C0223A18CB62780031850C /* FLBManager.m in Sources */,

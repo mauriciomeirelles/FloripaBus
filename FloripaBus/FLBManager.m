@@ -52,8 +52,6 @@
     [[self AFManagerObject] POST:GET_ROUTES
        parameters:@{@"params" : @{ @"stopName":    [NSString stringWithFormat:@"%%%@%%",[stopName lowercaseString]]} }
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              NSLog(@"JSON: %@", [responseObject description]);
-              
               NSArray *routesRows = responseObject[@"rows"];
               NSMutableArray *routes = [[NSMutableArray alloc] initWithCapacity:routesRows.count];
               
@@ -68,15 +66,9 @@
               [currentDefaults synchronize];
               
               success(routes);
-              
-              
+            
           }
           failure:^(AFHTTPRequestOperation *operation, NSError *err) {
-              NSLog(@"Error: %@", [error description]);
-              
-              NSString *resposta = [[NSString alloc] initWithData:operation.responseData encoding:NSASCIIStringEncoding];
-              NSLog(@"Resposta do servidor: %@", resposta);
-              
               error(err.description);
           }
      ];
@@ -94,8 +86,6 @@
     [[self AFManagerObject] POST:GET_STOPS
                       parameters:@{@"params" : @{ @"routeId": [NSString stringWithFormat:@"%d", route.routeId]} }
                          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                             NSLog(@"JSON: %@", [responseObject description]);
-                             
                              NSArray *stopsRows = responseObject[@"rows"];
                              NSMutableArray *stops = [[NSMutableArray alloc] initWithCapacity:stopsRows.count];
                              
@@ -109,11 +99,6 @@
                             
                          }
                          failure:^(AFHTTPRequestOperation *operation, NSError *err) {
-                             NSLog(@"Error: %@", [error description]);
-                             
-                             NSString *resposta = [[NSString alloc] initWithData:operation.responseData encoding:NSASCIIStringEncoding];
-                             NSLog(@"Resposta do servidor: %@", resposta);
-                             
                              error(err.description);
                          }
      ];
@@ -131,8 +116,6 @@
     [[self AFManagerObject] POST:GET_DEPARTURES
                       parameters:@{@"params" : @{ @"routeId": [NSString stringWithFormat:@"%d", route.routeId]} }
                          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                             NSLog(@"JSON: %@", [responseObject description]);
-                             
                              NSArray *departsRows = responseObject[@"rows"];
                              NSMutableArray *departures = [[NSMutableArray alloc] initWithCapacity:departsRows.count];
                              
@@ -146,11 +129,6 @@
                              
                          }
                          failure:^(AFHTTPRequestOperation *operation, NSError *err) {
-                             NSLog(@"Error: %@", [error description]);
-                             
-                             NSString *resposta = [[NSString alloc] initWithData:operation.responseData encoding:NSASCIIStringEncoding];
-                             NSLog(@"Resposta do servidor: %@", resposta);
-                             
                              error(err.description);
                          }
      ];
