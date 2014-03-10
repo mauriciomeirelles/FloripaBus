@@ -61,10 +61,6 @@
                   [routes addObject:route];
               }
               
-              NSUserDefaults *currentDefaults = [NSUserDefaults standardUserDefaults];
-              [currentDefaults setObject:[NSKeyedArchiver archivedDataWithRootObject: routes] forKey:ROUTES_KEY];
-              [currentDefaults synchronize];
-              
               success(routes);
             
           }

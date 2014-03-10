@@ -17,6 +17,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
+                                    <outlet property="delegate" destination="6ZI-g7-X5C" id="RcA-Gt-EX0"/>
                                     <outletCollection property="gestureRecognizers" destination="qHv-Rw-r5d" appends="YES" id="fJb-Pa-gA3"/>
                                 </connections>
                             </mapView>

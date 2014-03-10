@@ -12,8 +12,6 @@
 #import "FLBStop.h"
 #import "FLBDeparture.h"
 
-#define ROUTES_KEY @"routes"
-
 @interface FLBManager : NSObject
 
 ////////////////////////////////////////////////////////////////////////////////
